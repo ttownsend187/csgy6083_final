@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+<?php
+include('header.php');
+?>
+<!-- As a heading -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div>
+      <a class="navbar-brand" href="index.php">Vaccination</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+
+</nav>
+
+
+
+
+<body>
+  <div class="container">
+    <h5>Your Identity</h5>
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      <input type="radio" class="btn-check" name="btnradio" id="b1" autocomplete="off" checked>
+      <label class="btn btn-outline-primary" for="b1">Patient</label>
+
+      <input type="radio" class="btn-check" name="btnradio" id="b2" autocomplete="off">
+      <label class="btn btn-outline-primary" for="b2">Provider</label>
+<!-- 
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+      <label class="btn btn-outline-primary" for="btnradio3">Radio 3</label> -->
+    </div>
+
+    <form action ='PatientRegistration.php' method="post" id="form">
+      <div >
+        <h5 id = "information">Patient Information </h5>
+      </div>
+
+      <div class="mb-3"  id="name" style="display: none">
+        <label for="name" class="form-label">Provider Name</label>
+        <input type="text" class="form-control" name="name" placeholder="CVS">
+      </div>
+
+      <div class="mb-3"  id="providerType" style="display: none">
+        <label for="providerType" class="form-label">Provider Type</label>
+        <input type="text" class="form-control" name="providerType" placeholder="Pharmacy">
+      </div>
+      
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" id="email" name="email" placeholder="example@gmail.com">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="text" class="form-control" id="password" name="password" placeholder="Input your password here">
+      </div> 
+      <div class="mb-3" id="firstname">
+        <label for="firstname" class="form-label">First Name</label>
+        <input type="text" class="form-control" name="firstname" placeholder="Input your firstname here">
+      </div>
+      <div class="mb-3" id="lastname">
+        <label for="lastname" class="form-label">Last Name</label>
+        <input type="text" class="form-control" name="lastname" placeholder="Input your lastname here">
+      </div>
+      <div class="mb-3" id = "DOB">
+        <label for ="DOB"> <span>Date of Birth</span></label>
+        <input type="date", name = "DOB">
+      </div>
+      <div class="mb-3">
+        <label for ="areacode"> <span>areacode/phone</span> </label>
+      <input type="text" id = "areacode" size="3" maxlength="3" name = "areacode">
+      <input type="text" id = "phone" size="7" maxlength="7" name = "phone">
+      <span style="color: darkgrey">xxx xxxxxxx</span>
+      </div>
+      <div class="mb-3" id = "SSN">
+        <label for ="SSN"> <span>Social Security Number</span> </label>
+      <input type="text" maxlength="9" size="10" name = "SSN">
+      <span style="color: darkgrey">xxxxxxxxx</span>
+      </div>
+
+      <h5>Address Information </h5>
+      <div class="mb-3">
+         <label for ="stnum"> <span>Street Number</span> </label>
+        <input type="text" class="form-control" id = "stnum" size="7" name = "stnum">
+      </div>
+      <div class="mb-3">
+        <label for ="stname"> <span>Street Name </span></label>
+        <input type="text" class="form-control" id = "stname", name = "stname">
+      </div>
+      <div class="mb-3">
+        <label for ="city"> <span>City</span></label>
+        <input type="text" class="form-control" id = "city", name = "city">
+      </div>
+      <div class="mb-3">
+        <label for ="state"> <span>State</span> </label>
+        <input type="text" class="form-control" id = "state", name = "state">
+      </div>
+      <div class="mb-3">
+        <label for ="zip"><span>Zipcode</span> </label>
+        <input type="text" class="form-control" id = "zip" size="6" maxlength="5" name = "zip">
+      </div>
+
+      <div id = "medical">
+        <h5>Medical History</h5>
+        <div class="mb-3">
+           <label for ="preexisting_conditions"><span>Pre-Existing Conditions</span> </label>
+        <input type="checkbox" id = "preexisting_conditions" name = "preexisting_conditions" value="1">
+        </div>
+        <div class="mb-3">
+          <label for ="FirstResponder"><span>First Responder</span> </label>
+        <input type="checkbox" id = "FirstResponder"  name = "FirstResponder" value="1">
+        </div>
+        <div class="mb-3">
+          <label for ="EssentialWorker"><span>Essential Worker</span> </label>
+        <input type="checkbox" id = "EssentialWorker" name = "EssentialWorker" value="1">
+        </div>
+      </div>
+      
+      <div id = "preference">
+        <h5>Preference</h5>
+        <p>
+          <label for ="maxDistance"> <span>Max Distance</span> </label>
+          <select id = "maxDistance" name = "maxDistance" datatype="int">
+            <option></option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+          </select>
+        </p>
+      </div>
+
+
+      <button class="btn btn-primary" type="submit"> Sign up </button>
+    </form>
+  </div>
+
+  <script type="text/javascript">
+    var b1 = document.getElementById("b1");
+    var b2 = document.getElementById("b2");
+    var providername = document.getElementById("name");
+    var providerType = document.getElementById("providerType");
+    var firstname = document.getElementById("firstname");
+    var lastname = document.getElementById("lastname");
+    var dob = document.getElementById("DOB");
+    var ssn = document.getElementById("SSN");
+    var mh = document.getElementById("medical");
+    var preference = document.getElementById("preference");
+
+    b1.onclick = function() {
+      document.getElementById("information").innerText ="Patient Information";
+      document.getElementById("form").action = "PatientRegistration.php";
+      providername.style.display = "none";
+      providerType.style.display = "none";
+      firstname.style.display = "block";
+      lastname.style.display = "block";
+      dob.style.display = "block";
+      ssn.style.display = "block";
+      mh.style.display = "block";
+      preference.style.display = "block";
+    }
+
+    b2.onclick = function() {
+      document.getElementById("information").innerText ="Provider Information";
+      document.getElementById("form").action = "ProviderRegistration.php";
+      providername.style.display = "block";
+      providerType.style.display = "block";
+      firstname.style.display = "none";
+      lastname.style.display = "none";
+      dob.style.display = "none";
+      ssn.style.display = "none";
+      mh.style.display = "none";
+      preference.style.display = "none"; 
+    }
+    
+  </script>
+
+  <footer class="position-relative z-index-10 d-print-none">
+      <!-- Copyright section of the footer-->
+      <div class="py-4 font-weight-light bg-gray-800 text-gray-300">
+          <div class="container text-md-center text-center">
+              <p class="text-sm mb-md-0">&copy; 2021, Vaccination NYU</p>
+          </div>
+      </div>
+  </footer>
+
+
+</body>
+</html>
